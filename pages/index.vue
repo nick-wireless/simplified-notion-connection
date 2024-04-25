@@ -1,4 +1,12 @@
-<script setup></script>
+<script setup>
+
+const { data:articleList } = await useAsyncData('allArticles', () => $fetch('/api/articles'))
+
+// Doesn't seem to work???
+// const filteredList = articleList.filter(article => article.sectionCategory === "Highlights")
+
+
+</script>
 <template>
-  <div>Hello from simplified-notion-connection</div>
+  <pre>{{ articleList }}</pre>
 </template>
